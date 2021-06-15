@@ -1,5 +1,5 @@
 .img-logo {
-    max-width: 10%;
+    width: 5em;
     height: auto;
 }
 .intro a{
@@ -14,7 +14,9 @@ footer div div .p{
     margin:0;
 }
 .cal{
-    width:100%;
+    width: 100%;
+    max-height: 20em;
+    overflow: hidden;
 }
 td img{
     width:90%;
