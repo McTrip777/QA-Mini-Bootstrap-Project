@@ -1,5 +1,6 @@
 'use strict'
 
+// Variables
 let a = document.querySelector('.input1');
 let b = document.querySelector('.input2');
 
@@ -12,6 +13,7 @@ let result = document.querySelector('.result')
 
 let arr = [];
 
+// Math equations and Listeners 
 addBtn.addEventListener("click", () => {
     allFuncs("add", Number(a.value)+Number(b.value))
 })
@@ -25,6 +27,7 @@ multBtn.addEventListener("click", () => {
     allFuncs("mult", Number(a.value)*Number(b.value))
 })
 
+// Grouped functions together to keep code dry
 const allFuncs = (type, val) => {
     clearResult()
     stringFunc(type, val)
@@ -32,6 +35,7 @@ const allFuncs = (type, val) => {
     displayArr()
 }
 
+// Clears the value of the math equation if there is one
 const clearResult = () => {
     let val = document.querySelector(".result");
     if (val.hasChildNodes()) {
@@ -39,6 +43,7 @@ const clearResult = () => {
     }
 }
 
+// Builds a string of the equations and adds them to the array
 const stringFunc = (method, val) => {
     let type = "+"
     if(method === "add") type = "+"
@@ -49,6 +54,7 @@ const stringFunc = (method, val) => {
     arr.push(str);
 }
 
+// Displays the result of the math equation performed
 const displayResult = (val) => {
     const result = document.createElement("h2");
     const node = document.createTextNode(val);
@@ -57,6 +63,7 @@ const displayResult = (val) => {
     element.append(result);
 }
 
+// Displays the array of strings, listing all past math operations
 const displayArr = () => {
     let item = arr[arr.length-1]
     const para = document.createElement("li");
