@@ -10,6 +10,7 @@ let divBtn = document.querySelector('.div')
 let multBtn = document.querySelector('.mult') 
 
 let result = document.querySelector('.result') 
+let history = document.querySelector('.arrList')
 
 let arr = [];
 
@@ -37,9 +38,8 @@ const allFuncs = (type, val) => {
 
 // Clears the value of the math equation if there is one
 const clearResult = () => {
-    let val = document.querySelector(".result");
-    if (val.hasChildNodes()) {
-        val.removeChild(val.childNodes[0]);
+    if (result.hasChildNodes()) {
+        result.removeChild(result.childNodes[0]);
     }
 }
 
@@ -71,4 +71,11 @@ const displayArr = () => {
     para.append(node);
     const element = document.querySelector(".arrList");
     element.prepend(para);
+}
+
+const clearHistory = () => {
+    history.innerHTML = "";
+    result.innerHTML = "";
+    a.value = "";
+    b.value = "";
 }
