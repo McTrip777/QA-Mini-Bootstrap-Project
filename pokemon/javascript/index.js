@@ -8,9 +8,9 @@ const getAllPokemon = (value) => {
     .then((response)=>{
         for(let poke of response.data.results){
             console.log(value)
-            if(poke.name.includes(value) || value === ""){
+            // if(poke.name.includes(value) || value === ""){
                 printToScreen(poke.name)
-            }
+            // }
         }
     })
     .catch((error)=>{
